@@ -1,10 +1,14 @@
 CC=gcc
 CFLAGS=-Wall -std=c11
+HEADER=defines.h
 
-task: main.o generator.o
-	$(CC) -o most_common main.o generator.o
+FILE_MAIN=main.o
+FILE_GENERATOR=generator.o
+FILE_USAGE=usage.o
+FILE_COMPARATOR=comparator.o
+
+task: $(FILE_MAIN) $(FILE_GENERATOR) $(FILE_USAGE) $(FILE_COMPARATOR)
+	$(CC) -o most_common $(FILE_MAIN) $(FILE_GENERATOR) $(FILE_USAGE) $(FILE_COMPARATOR)
 
 clean:
-	rm -f task main.o generator.o
-
-all: task clean
+	rm -f task $(FILE_MAIN) $(FILE_GENERATOR) $(FILE_USAGE) $(FILE_COMPARATOR)
