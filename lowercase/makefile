@@ -1,0 +1,14 @@
+CC=gcc
+CFLAGS=-Wall -std=c11
+HEADER=defines.h
+
+FILE_MAIN=main.o
+FILE_GENERATOR=generator.o
+FILE_USAGE=usage.o
+FILE_LOWERCASE=lowercase.o
+
+task: $(FILE_MAIN) $(FILE_GENERATOR) $(FILE_USAGE) $(FILE_LOWERCASE)
+	$(CC) -o lowercase $(FILE_MAIN) $(FILE_GENERATOR) $(FILE_USAGE) $(FILE_LOWERCASE)
+
+clean:
+	rm -f task $(FILE_MAIN) $(FILE_GENERATOR) $(FILE_USAGE) $(FILE_LOWERCASE)
