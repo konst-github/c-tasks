@@ -2,6 +2,6 @@
 #ifndef GENERATOR_H
 #define GENERATOR_H
 
-int generateTestFile();
+int generate_file();
 
 #endif

@@ -19,7 +19,8 @@
  argv[1] - path to the file
  */
 
-#define REQUIRED_ARGC 3 	// Program name and 2 file names/paths
+#define REQUIRED_ARGC_GEN		 	2 // Program name and 'gen' command
+#define REQUIRED_ARGC_COMPARE		3 // Program name and 2 file names/paths
 #define CMP_RESULT_EQUAL 0
 
 #define RUN_RESULT_INVALID -1
@@ -39,7 +40,7 @@ int main(int argc, const char *argv[])
 
 	// 1. Check if we've received a correct number of arguments
 
-	if (argc != REQUIRED_ARGC)
+	if (argc != REQUIRED_ARGC_GEN && argc != REQUIRED_ARGC_COMPARE)
 	{
 		print_usage();
 		return RUN_RESULT_INVALID;

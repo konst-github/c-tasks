@@ -41,7 +41,7 @@ int main(int argc, const char *argv[])
 
 	if (argc != REQUIRED_ARGC)
 	{
-		printUsage();
+		print_usage();
 		return RUN_RESULT_INVALID;
 	}
 
@@ -62,7 +62,7 @@ int main(int argc, const char *argv[])
 		printf("Received 'gen' command ->\n\n");
 		printf("Starting test file generation\n\n");
 
-		generateTestFile();
+		generate_file();
 
 		return RUN_RESULT_GEN_SUCCESS;
 	}
@@ -92,7 +92,7 @@ FILE * open_file(const char file_path[])
 	if ((file = fopen(file_path, "r")) == NULL)
 	{
 		perror("Error opening file. Please check if path is correct or file exists.\n");
-		printUsage();
+		print_usage();
 		return NULL;
 	}
 

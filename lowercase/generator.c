@@ -6,6 +6,7 @@
 #include <string.h>
 #include <time.h>
 
+#include "defines.h"
 #include "generator.h"
 
 
@@ -40,10 +41,10 @@ const char alphabet[LENGTH_ALPHABET] =
 };
 
 
-int generateTestFile()
+int generate_file()
 {
 
-	unsigned long int bytesWritten = 0u;
+	LONG bytesWritten = 0u;
 
 	char * path = "words.txt";
 	FILE * file = fopen(path, "w");
@@ -56,7 +57,7 @@ int generateTestFile()
 
 	time_t time_start, time_end;
 	time(&time_start);
-	printf("generateTestFile START: %lu\n", time_start);
+	printf("generate_file START: %lu\n", time_start);
 
 	while(bytesWritten < MAX_FILE_LENGTH)
 	{
@@ -73,11 +74,11 @@ int generateTestFile()
 
 		bytesWritten += fwrite(str, sizeof(char), length_to_gen, file);
 
-		printf("generateTestFile %lu bytes written\n", bytesWritten);
+		printf("generate_file: %lu bytes written\n", bytesWritten);
 	}
 
 	time(&time_end);
-	printf("generateTestFile END: %lu , ELAPSED: %f\n", time_end, difftime(time_end, time_start));
+	printf("generate_file END: %lu , ELAPSED: %f\n", time_end, difftime(time_end, time_start));
 
 	if(fclose(file))
 	{

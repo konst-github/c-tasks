@@ -2,6 +2,6 @@
 #ifndef USAGE_H
 #define USAGE_H
 
-void printUsage();
+void print_usage();
 
 #endif

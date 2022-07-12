@@ -3,7 +3,7 @@
 
 #include "usage.h"
 
-void printUsage() {
+void print_usage() {
 	printf("\n===== LOWERCASE APPLICATION USAGE =====\n"
 		   "\n"
 		   "Commands:\n"
